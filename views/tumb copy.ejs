@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container">
+   <div class="ui huge header">BLOG Posts</div>
+   <a class="ui blue basic button" href="/blogs/new" class="item">New Post</a>
+   <a class="ui blue basic button" href="/blogs/index" class="item"><i class="left floated vertical align justify icon"></i></a>
+
+    <div class="ui main text container" style="display: flex; flex-wrap: wrap;">
+
+        <% blogs.forEach(function(blog){ %>
+                <div class="ui small images">
+                    <img src="http://<%= blog.image %>">
+                        <div >
+                            <h4><%= blog.title %></h4>
+                        </div>
+                    <p>
+                        <a  class="ui blue basic button" href="/blogs/<%= blog._id %>">Read More</a>
+                    </p>
+                </div>
+            
+        <% }); %>
+    </div>
+</div>    
+<%- include("partials/footer") %>
